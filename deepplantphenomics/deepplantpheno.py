@@ -1117,6 +1117,9 @@ class DPPModel(object):
         self.__log('Total raw examples is %d' % self.__total_raw_samples)
         self.__log('Total classes is %d' % self.__total_classes)
 
+        self.__raw_image_files = image_files
+        self.__raw_labels = labels
+
     def load_dataset_from_directory_with_segmentation_masks(self, dirname, seg_dirname):
         """
         Loads the png images in the given directory into an internal representation, using binary segmentation
