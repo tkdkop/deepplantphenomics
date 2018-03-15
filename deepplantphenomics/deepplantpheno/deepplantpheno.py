@@ -1,8 +1,7 @@
-from . import layers
-from . import loaders
-from . import preprocessing
-from . import definitions
-from . import networks
+from deepplantphenomics import layers
+from deepplantphenomics import loaders
+from deepplantphenomics import definitions
+from deepplantphenomics import networks
 import tensorflow as tf
 import numpy as np
 from joblib import Parallel, delayed
@@ -11,6 +10,12 @@ import datetime
 import time
 import warnings
 import copy
+
+try:
+    from .. import preprocessing
+except ModuleNotFoundError:
+    # TODO don't use print here
+    print("PlantCV not found, preprocessing will be unavailable")
 
 
 class DPPModel(object):
